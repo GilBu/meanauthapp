@@ -1,3 +1,23 @@
-<p>
-  register works!
-</p>
+<form class = "registerForm" #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+      Name:<br><input [(ngModel)] = "name" name="name" ngModel required #first="ngModel"><br>
+      Email:<br><input [(ngModel)] = "email" name="email" ngModel><br>
+      Username:<br><input [(ngModel)] = "username" name="username" ngModel><br>
+      Password:<br><input [(ngModel)] = "password" name="password" ngModel><br>
+      <button>Submit</button>
+    </form>
+
+    <p>First name value: {{ first.value }}</p>
+    <p>First name valid: {{ first.valid }}</p>
+    <p>Form value: {{ f.value | json }}</p>
+    <p>Form valid: {{ f.valid }}</p>
+<!-- <form class="registerForm">
+  <label for="name">Name</label><br>
+  <input type="text" name="name"><br>
+  Email:<br>
+  <input type="text" name="email"><br>
+  Username:<br>
+  <input type="text" name="username"><br>
+  Password:<br>
+  <input type="password" name="password"><br>
+</form>
+<button  (click)="registerUser(newUser)">Submit</button> -->
